@@ -1,0 +1,14 @@
+Crear el proyecto hrsoftv1
+En la terminal. Crear el package.json con el comando npm init -y
+En la terminal instalar las dependencias: npm install express momgoose dotenv bcrypt jsonwebtoken validator cors cloudinary multer-storage-cloudinary
+Crear los ficheros a nivel de la raiz: .gitignore, .env, index.js
+Entrar al index.js. Inportar las dependencias, levantar el servidor, dejar el espacio para importar y llamar a las rutas y oir al servidor.
+Creamos a nivel de la raiz la carpeta   src ==> api ==> models      Todos los modelos de la db
+                                                    ==> controllers Todas los controles de la db
+                                                    ==> routes      Tods las routes de la db
+                                        src==> utils ==> db.js      La conexión a la db
+Creamos el fichero db.js
+En el index.js, importamos la conexión a la db y llamamos a la función de conexión de la db
+Crear el modelo de company.model.js
+Crear los controllers de company.controller.js
+Crear las routes de company.routes.js
