@@ -9,15 +9,28 @@ const EmployeeSchema = new mongoose.Schema(
     birthdate: { type: Date, required: true },
     datehight: { type: Date, required: true },
     enddate: { type: Date },
-    personelInformation: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "personelInformation",
+    maritalstatus: {
+      type: String,
+      required: true,
+      trim: true,
+      enum: [
+        "soltero",
+        "soltera",
+        "Casado",
+        "casada",
+        "divorciado",
+        "divorciada",
+        "otros",
+      ],
     },
-    laborInformation: {
+    guys: { type: Number, enum: [0, 1, 2, 3, 4] },
+    girls: { type: Number, enum: [0, 1, 2, 3, 4] },
+    cif: { type: String, required: true, trim: true },
+    name: { type: String, trim: true },
+    laborInformations: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "personelInformation",
+      ref: "laborInformation",
     },
-    employee: { type: mongoose.Schema.Types.ObjectId, ref: "employee" },
   },
   {
     timestamps: true,

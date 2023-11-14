@@ -14,8 +14,11 @@ server.use(express.json());
 server.use(express.urlencoded({ extended: false }));
 
 //Routes
-const CompanyRouter = require("./src/api/routes/company.routes");
-server.use("/companys", CompanyRouter);
+const EmployeeRouter = require("./src/api/routes/employee.routes");
+server.use("/employeess", EmployeeRouter);
+
+const LaborInformationRouter = require("./src/api/routes/laborinformation.routes");
+server.use("/laborinformations", LaborInformationRouter);
 
 //Ruta para derivar cuando no hay una válida
 server.use("*", (req, res) => {

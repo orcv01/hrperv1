@@ -20,6 +20,16 @@ const getLaborInformationByID = async (req, res, next) => {
   }
 };
 
+const getLaborByName = async (req, res, next) => {
+  try {
+    const { name } = req.params;
+    const labor = await Labor.findOne({ name: name });
+    return res.status(200).json(labor);
+  } catch (error) {
+    return res.status(404).json("Labor not found", error);
+  }
+};
+
 const createLaborInformation = async (req, res, next) => {
   try {
     const newLaborInformation = new LaborInformation(req.body);
@@ -55,6 +65,7 @@ const updateLaborInformation = async (req, res, next) => {
 module.exports = {
   getLaborInformations,
   getLaborInformationByID,
+  getLaborByName,
   deleteLaborInformation,
   createLaborInformation,
   updateLaborInformation,
