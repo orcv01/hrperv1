@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const RolSchema = new mongoose.Schema(
   {
-    name: { type:string, required: true, enum["admin", "usuary"]},
+    name: { type: string, required: true, trim: true, enum: ["admin", "user"] },
   },
   {
     timestamps: true,
